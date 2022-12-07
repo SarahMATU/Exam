@@ -4,18 +4,18 @@ public class Employee {
     private String emPPS;
 
 
-    public Employee(String emName, String emPPS){
-            setEmName(emName);
-            setEmPPS(emPPS);
+    public Employee(String n, String p){
+            emName = n;
+            emPPS = p;
     }
 
 
     public String getEmName() {
-        if(emName.length() < 5|| emName.length()  > 22) {
+        if(emName.length() > 5|| emName.length()  < 22) {
             return emName;
         }
         else {
-            throw new IllegalArgumentException("This is not a valid name, must be more that 5 characters adn less that 25 characters");
+            throw new IllegalArgumentException("This is not a valid name, must be more that 5 characters and less than 25 characters");
         }
     }
 
@@ -30,7 +30,6 @@ public class Employee {
         else {
             throw new IllegalArgumentException("This is not a valid PPS ID Number, must be 6 characters");
         }
-
     }
 
     public void setEmPPS(String emPPS) {
